@@ -1,7 +1,7 @@
 #define buzzer 21
 #define sequencia 32
 const byte leds[] = { 27, 32, 33, 25 };
-const byte botoes[] = { 4, 2, 17, 5 };
+const byte botoes[] = { 4, 2, 17, 5, 22 };
 const byte botaoReset = 22;
 const int tons[] = { 262, 294, 330, 349 };
 
@@ -47,7 +47,7 @@ void ligarSequencia() {
 byte verificarBotao() {
   unsigned long inicioVerificacaoBotao = millis();
   while (true) {
-    for (byte i = 0; i < 4; i++) {
+    for (byte i = 0; i < 5; i++) {
       byte botaoPressionado = digitalRead(botoes[i]);
       if (botaoPressionado == LOW) {
         return i;
