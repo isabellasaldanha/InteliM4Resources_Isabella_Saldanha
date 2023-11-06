@@ -1,5 +1,5 @@
 #define buzzer 21
-#define sequencia 32
+#define sequencia 4
 const byte leds[] = { 27, 32, 33, 25 };
 const byte botoes[] = { 4, 2, 17, 5, 22 };
 const byte botaoReset = 22;
@@ -132,5 +132,9 @@ void loop() {
     unsigned long inicioMusica = millis();
     while (millis() - inicioMusica < 300) {
     }
+  }
+  
+  if (jogadaAtual == 5) {
+    game_over();
   }
 }
